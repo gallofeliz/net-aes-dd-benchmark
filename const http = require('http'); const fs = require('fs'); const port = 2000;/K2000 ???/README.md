@@ -1,5 +1,7 @@
 # Net AES DD Benchmark
 
+Note: Script written to determinate if RPI 4 will have good performances with its SSD drive and an encryption layer (LUKS). The network is optimized here but in the real life, wifi will increase the times, SAMBA or others protocols will destroy the perf also ! But that's not the question...
+
 ## Prerequise
 
 - Docker
@@ -34,8 +36,12 @@
 - rpi04
   - curl 30-34MB (240-272MB)
   - duration ~30s
+  - notes : if we remove AES pipe, we have 45-87MB for curl and 14s for duration. As expected, encryption has strong impact for the NAS.
 - laptop
   - curl 96-110MB (768-880MB)
   - duration 10s
   - notes: possibly limited by network
 
+## Conclusion
+
+Raspberry pi 4 : KO especialy with encryption
